@@ -1,25 +1,22 @@
 # EduManage — Student Management System
 
 A full-stack, role-based Student Management System for a school or college:
+
 **React + Vite + Tailwind** frontend, **Node.js + Express** REST API, **PostgreSQL** database.
 
-> **Build status:** This is being built step by step,each
-> step fully working before the next starts. **Already completed for steps—
-> project structure, database schema, backend + DB connection, and
-> authentication with role-based access control (admin / teacher / student /
-> parent). Everything below runs and works end-to-end today. Modules shown as
-
-> What next in the UI (students, classes, attendance, exams, fees,
-> announcements, reports, dashboard stats) 
+> **Build status**: This is being built step by step, with each step fully
+> working before the next starts. The project structure, database schema,
+> backend and database connection, and authentication with role-based access
+> control (admin / teacher / student / parent) are complete.
 
 ---
 
-## 1. Prerequisites
+1. Prerequisites
 
 - Node.js 18+ and npm
 - PostgreSQL 14+ running locally (or a connection string to a hosted instance)
 
-## 2. Backend setup
+2. Backend setup
 
 ```bash
 cd backend
@@ -32,36 +29,32 @@ Create the database, then load the schema:
 
 ```bash
 createdb school_sms
-psql -U <your_pg_user> -d school management system -f src/db/schema.sql
+psql -U <your_pg_user> -d school_sms -f src/db/schema.sql
 ```
 
-i have Seed an initial admin account and reference data (academic year, term,
-departments, grading bands):
+Add `ADMIN_EMAIL` and `ADMIN_PASSWORD` to `backend/.env`, then seed the initial
+admin account and reference data (academic year, term, departments, and
+grading bands):
 
 ```bash
 node src/db/seed.js
 ```
 
-This prints the seeded admin login, by default:
-
-```
-admin@school.test / Admin@12345
-```
-
 Start the API:
 
+```bash
 npm run dev
+```
 
 ## 3. Frontend setup
 
-
+```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-
-Log in with the seeded admin account above. You'll land on the admin
+Log in with the admin credentials configured in `backend/.env`. You'll land on the admin
 dashboard shell with the full navigation for every module already wired up.
 
 ## 4. What's implemented right now
@@ -89,8 +82,9 @@ dashboard shell with the full navigation for every module already wired up.
   structure for all four roles (admin/teacher/student/parent), each pointing
   at its future module page.
 
-// still working on it
-## 5. step 5
+> Still in progress: the modules below are planned next.
+
+## 5. Step 5 and beyond
 
 | Step | Module |
 |------|--------|
@@ -109,7 +103,7 @@ Ask to continue with "Step 5" (or any step) and it'll be added on top of this
 working base, following the same pattern: real endpoints, real queries, real
 UI — no mocked data left in place of the finished feature.
 
-## 6.  full project structure
+## 6. Full project structure
 
 ```
 sms/

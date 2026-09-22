@@ -9,8 +9,12 @@ require('dotenv').config();
 const bcrypt = require('bcrypt');
 const { pool, query } = require('../config/db');
 
-const ADMIN_EMAIL = 'admin@school.test';
-const ADMIN_PASSWORD = 'Admin@12345'; // change immediately after first login
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+
+if (!ADMIN_EMAIL || !ADMIN_PASSWORD) {
+  throw new Error('ADMIN_EMAIL and ADMIN_PASSWORD must be set in backend/.env before seeding.');
+}
 
 async function seed() {
   console.log('Seeding initial data...');
@@ -25,7 +29,7 @@ async function seed() {
        VALUES ($1, $2, 'admin', 'System Administrator')`,
       [ADMIN_EMAIL, passwordHash]
     );
-    console.log(`✓ Admin user created: ${ADMIN_EMAIL} / ${ADMIN_PASSWORD}`);
+    console.log(`Admin user created: ${ADMIN_EMAIL}`);
   } else {
     console.log('• Admin user already exists, skipping.');
   }

@@ -57,7 +57,7 @@ export default function DashboardLayout() {
       >
         <div className="flex h-16 items-center gap-2 border-b border-slate-200 px-6">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">
-            E
+            R
           </div>
           <span className="text-lg font-bold text-slate-900">{SCHOOL_NAME}</span>
         </div>
