@@ -1,8 +1,8 @@
-# Roots insitute centre— Student Management System
+Roots insitute centre— Student Management System
 
-A full-stack, role-based Student Management System for a school or college:
+A frontend and 50% backend, role-based Student Management System for a school or college:
 
-**React + Vite + Tailwind** frontend, **Node.js + Express** REST API, **PostgreSQL** database.
+**React + Vite + Tailwind** frontend, **Node.js + Express** REST API, **PostgreSQL** database backend.
 
 > **Build status**: This is being built step by step, with each step fully
 > working before the next starts. The project structure, database schema,
@@ -46,7 +46,7 @@ Start the API:
 npm run dev
 ```
 
-## 3. Frontend setup
+3. Frontend setup
 
 ```bash
 cd frontend
@@ -57,7 +57,7 @@ npm run dev
 Log in with the admin credentials configured in `backend/.env`. You'll land on the admin
 dashboard shell with the full navigation for every module already wired up.
 
-## 4. What's implemented right now
+ 4. What's implemented right now
 
 - **Database schema** (`backend/src/db/schema.sql`) — every entity from the
   spec: users, students, parents, teachers, classes, subjects, academic
@@ -103,7 +103,7 @@ Ask to continue with "Step 5" (or any step) and it'll be added on top of this
 working base, following the same pattern: real endpoints, real queries, real
 UI — no mocked data left in place of the finished feature.
 
-## 6. Full project structure
+6. Full project structure
 
 ```
 sms/
@@ -122,13 +122,13 @@ sms/
 │   └── .env.example
 └── frontend/
     ├── src/
-    │   ├── api/axios.js           # API client with JWT + 401 handling
+    │   ├── api/axios.js           # API client with JWT
     │   ├── context/AuthContext.jsx
     │   ├── components/ProtectedRoute.jsx
-    │   ├── layouts/DashboardLayout.jsx   # sidebar + topbar shell
+    │   ├── layouts/DashboardLayout.jsx   #  sidebar + topbar shell
     │   ├── pages/                 # Login, RoleDashboard, ComingSoon, etc.
     │   └── App.jsx                 # role-based route tree
     ├── package.json
     ├── vite.config.js
     └── tailwind.config.js
-```
+
