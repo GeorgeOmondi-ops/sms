@@ -1,4 +1,4 @@
-# EduManage — Student Management System
+# Roots insitute centre— Student Management System
 
 A full-stack, role-based Student Management System for a school or college:
 
